@@ -22,7 +22,8 @@ def imprimeMatriz(matriz):
     for i in range(tamanho):
         print(matriz[i])
 
-#Função para verificar se a nova Rainha a ser posicionada está em xeque na diagonal por alguma outra Rainha já posicionada
+#Função para verificar se a nova Rainha a ser posicionada está em xeque na diagonal por alguma outra Rainha 
+# já posicionada
 def verificaDisp(lin, col, linOcupada, colOcupada):
     #Teste realizado com todas as Rainhas já posicionadas
     for i in range(len(linOcupada)):
@@ -34,7 +35,8 @@ def verificaDisp(lin, col, linOcupada, colOcupada):
 def posicionaRainha(matriz, linOcupada, colOcupada):
     global erro
     tentativas = 0
-    #Nesse looping a coluna a ser posicionada a nova Rainha será decidida de forma randomica e terá um limite de tentivas
+    #Nesse looping a coluna a ser posicionada a nova Rainha será decidida de forma randomica e terá um 
+    # limite de tentivas
     #que informará caso a forma como as outras Rainhas foram dispostas não permita a resolução do problema
     while tentativas < tamanho * 10:
         lin = len(linOcupada)
@@ -45,7 +47,8 @@ def posicionaRainha(matriz, linOcupada, colOcupada):
             matriz[lin][col] = 1
             break
         tentativas+=1
-    #Caso o limite de tentativas seja atinjido, será informado que houve erro, o que fará que a resolução do problema se reinicie
+    #Caso o limite de tentativas seja atinjido, será informado que houve erro, o que fará que a 
+    # resolução do problema se reinicie
     if tentativas == tamanho * 10:
         erro = True
 
