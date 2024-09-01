@@ -3,9 +3,6 @@ import time
 import concurrent.futures
 import threading
 
-#Marco do início da execução do programa
-start_time = time.time()
-
 #Bloqueio de acesso para múltiplas threads em determinada parte do código
 lock = threading.Lock()
 
@@ -89,6 +86,9 @@ def main():
     tamanho = int(input("Digite o tamanho da matriz de NxN rainhas: "))
     matriz = None
 
+    # Marco do início da execução da resolução
+    start_time = time.time()
+
     #Inicia o processo de resolução da matriz tendo ela mesma como indicativo de resolução
     while matriz is None:
         matriz = resolveNRainhas(tamanho)
@@ -96,10 +96,10 @@ def main():
     #Realiza a impressão do problema resolvido
     imprimeMatriz(matriz, tamanho)
 
+    # Informa o tempo de execução
+    execution_time = time.time() - start_time
+    print("--- %s segundos ---" % execution_time)
 
 
-main()
-
-#Informa o tempo de execução
-execution_time = time.time() - start_time
-print("--- %s segundos ---" % execution_time)
+if __name__ == "__main__":
+    main()

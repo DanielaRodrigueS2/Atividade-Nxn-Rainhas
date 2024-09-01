@@ -1,5 +1,7 @@
 import time
 
+#Código utilizado na apresentação "A" para comparações com código "B"
+
 start_time = time.time()
 
 # Função responsável por gerar a matriz de um tamanho x usando listas dentro de listas
